@@ -6,9 +6,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
+    "build:github": "npm tun delete:docs && npm run build:href && npm rin copy:dist",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "delete:docs": "del docs",
+    "copy:dist": "copyfiles dist/bases/* ./docs -f"
   },
   "dependencies": {
     "@angular/animations": "^16.1.2",
@@ -20,6 +24,8 @@
     "@angular/platform-browser-dynamic": "^16.1.2",
     "@angular/router": "^16.1.2",
     "@types/uuid": "^9.0.2",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^5.0.0",
     "rxjs": "^7.8.1",
     "tslib": "^2.5.3",
     "uuid": "^9.0.0",
